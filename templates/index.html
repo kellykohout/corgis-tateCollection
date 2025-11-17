@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Artwork</h2>
+
+<form action="/results" method="get">
+
+    <label for="field">Search by:</label>
+    <select name="field" id="field" required>
+        <option value="title">Title</option>
+        <option value="artist">Artist</option>
+        <option value="year">Year</option>
+    </select>
+    <br><br>
+
+    <input type="text" name="q" placeholder="Enter search text..." required>
+    <button type="submit">Search</button>
+</form>
+
+{% endblock %}

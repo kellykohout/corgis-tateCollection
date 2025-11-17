@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Results</h2>
+
+{% if results %}
+    <ul>
+        {% for art in results %}
+            <li>
+                <strong>{{ art.title }}</strong><br>
+                Artist: {{ art.artist }}<br>
+                Year: {{ art.year }}<br>
+                <br>
+                {% if art.thumbnailUrl %}
+                <img src="{{ art.thumbnailUrl }}" width="400">
+                {% else %}
+                <em>No preview available.</em>
+                {% endif %}
+            </li>
+            <br><hr><br>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No artworks found.</p>
+{% endif %}
+
+<a href="/">Back to Search</a>
+{% endblock %}
