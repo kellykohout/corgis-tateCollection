@@ -1,28 +1,32 @@
 # corgis-tateCollection
 ## Executive Summary
-**Problem:** Museums across the globe keep large collections of very significant objects. When these collections take inventory or change, it is a significant event, especially for Tate. The Tate "family" is a large collection of art galleries in the UK. If the records are not clear, it is difficult to quickly find what pieces of the collection are still in the museum's posession. Furthermore, the msueum must identify them with more than one piece of information. We must create something for the Tate Museum curators to quickly search through their inventory, and for potential museum visitors for a specific piece or potential partner museums looking to exchange. 
-Museum curators, knowledge of collection
+**Problem:** Museums across the globe keep large collections of very significant objects. When these collections take inventory or change, it is a significant event, especially for Tate. The Tate "family" is a large collection of art galleries in the UK. If the records are not clear, it is difficult to quickly find what pieces of the collection are still in the museum's posession. Furthermore, the museum must identify them with more than one piece of information. We must create something for the Tate Museum curators to quickly search through their inventory (and for potential museum visitors looking for a specific piece or potential partner museums looking to exchange). 
 
-**Solution:** Build a simple search tool app where users search by typing in the title of the piece, or the name of the artist, or the year an art piece was created. The search tool will immediately display the matching artwork. Behing the scenes, the app cleans through the dataset of the museum collection.
+**Solution:** Build a simple search tool app where users search by typing in the title of the piece, or the name of the artist, or the year an art piece was created. The search tool will immediately display the matching artwork. Behind the scenes, the app cleans through the dataset of the museum collection.
 
 ## System Overview
 **Course Concept(s):** Initially a single interactive Bash script that including piping and was committed to a GitHub repo (inspired by Case03). Transitioned in to the final product: Flask app, J-SON endpoints, data ingestion and cleaning, and containerization with Docker (inspired by Case04).
 
 **Architecture Diagram:** Include a PNG in /assets and embed it here
 
-**Data/Modules/Services:** Flask, JSON, pandas, Tate Museum artwork_data.csv from the Tate Museum free-for-use. 
+**Data/Modules/Services:** Flask, JSON, Tate Museum artwork_data.csv (free-for-use)from the Tate Museum GitHub: [Link](https://github.com/tategallery/collection)
 
 ## How to Run (Local)
-Choose Docker or Apptainer and provide a single command. Example: (image)
+```
+# build
+docker build -t flask-art-search-app .
+# run
+docker run -p 5000:5000 flask-art-search-app
+```
 
 ## Design Decisions
 **Why this concept?** Initially, the solution was in the form of a single Bash script. However, this approach felt quite 2D. The user had a harder time interacting with the search function and it was slower. The Flask app is faster, more flexible, and more interactive. The current concept allows for more informative results by connecting with the dataset in more than one way. 
 
-**Tradeoffs:** Performance, cost, complexity, maintainability.
+**Tradeoffs:** This dataset of artwork is large and because the flask app must search it all, that means it stores a lot of memory and could slow down as the dataset increases. Other structures could be a smarter choice because they deal with the memory better. Other structures would be more complex and able to do more, but they would require more structure and possibly paying more. Currently, the flask app is free and flexible, but simple. 
 
-**Security/Privacy:** Secrets mgmt, input validation, PH handling.
+**Security/Privacy:** N/A. There are no secrets.
 
-**Ops:** Logs/metrics, scaling consideration, known limitations.
+**Ops:** Similarly to considered tradeoffs, there may be storage and speed limitations due to the large amount of memory. For instance, the Tate Github that is used is no longer actively maintained. Therefore, the data is actually not changing so storage of the cleaned dataset is not a problem for the flask app, but if for reason the dataset changed id change or the more comprehensive data set was used, the app would be heavily limited and difficult to scale.
 
 ## Results & Evaluation
 Screenshot or sample outputs (place assets in /assets).
@@ -32,6 +36,6 @@ Validation/ tests performed and outcomes.
 ## What’s Next
 Planned improvements, refactors, and stretch features.
 
-## Links ( Required)
-## Github Repo: <insert repo url>
+## Links
+## Github Repo: [Link](https://github.com/kellykohout/corgis-tateCollection/tree/main)
 ## Public cloud App (OPTIONAL)
