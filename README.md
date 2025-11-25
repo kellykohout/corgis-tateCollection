@@ -38,4 +38,4 @@ The next planned improvement would likely be adding more than one search field t
 ## Links
 ## Github Repo: [Link](https://github.com/kellykohout/corgis-tateCollection/tree/main)
 ## Tate Github: [Link](https://github.com/tategallery/collection)
-## Public cloud App (OPTIONAL)
+## Public cloud App: [Link](tate-artwork-search-dgc7eygvg0bfh2ex.eastus2-01.azurewebsites.net)
