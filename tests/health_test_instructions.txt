@@ -1,0 +1,7 @@
+Health check for Flask app:
+
+URL tested (in browser): https://cautious-goggles-5gpp7q4rjvgj34g9x-5000.app.github.dev/health
+Saved JSON output: tests/health_test.json
+Command used: curl -s http://localhost:5000/health -o tests/health_test.json
+
+You can open the JSON file to view the successful health test.

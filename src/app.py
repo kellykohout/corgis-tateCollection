@@ -4,7 +4,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Load dataset once
-df = pd.read_csv("artwork_data.csv")
+df = pd.read_csv("assets/artwork_data.csv")
 
 @app.route("/")
 def home():
@@ -18,7 +18,7 @@ def results():
     if query == "":
         return render_template("results.html", results=[])
 
-    # --- Search Logic ---
+    # Search Logic
     if field in ["title", "artist"]:
         matches = df[df[field].str.lower().str.contains(query, na=False)]
     elif field == "year":
@@ -30,7 +30,7 @@ def results():
 
     return render_template("results.html", results=result_dicts)
 
-# Optional JSON endpoint
+# JSON endpoint
 @app.route("/api/search")
 def api_search():
     query = request.args.get("q", "").lower()
@@ -45,6 +45,17 @@ def api_search():
 
     return jsonify(matches.to_dict(orient="records"))
 
+# Health check endpoint
+@app.route("/health")
+def health():
+    try:
+        df.head(1)
+        status = {"status": "ok", "df_loaded": True}
+    except Exception as e:
+        status = {"status": "error", "df_loaded": False, "error": str(e)}
+    return jsonify(status)
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
+
 

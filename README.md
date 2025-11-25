@@ -7,9 +7,9 @@
 ## System Overview
 **Course Concept(s):** Initially a single interactive Bash script that including piping and was committed to a GitHub repo (inspired by Case03). Transitioned in to the final product: Flask app, J-SON endpoints, data ingestion and cleaning, and containerization with Docker (inspired by Case04).
 
-**Architecture Diagram:** Include a PNG in /assets and embed it here
+**Architecture Diagram:** 
 
-**Data/Modules/Services:** Flask, JSON, Tate Museum artwork_data.csv (free-for-use)from the Tate Museum GitHub: [Link](https://github.com/tategallery/collection)
+**Data/Modules/Services:** Flask, JSON, Tate Museum artwork_data.csv (free-for-use)from the Tate Museum GitHub (link at bottom of page)
 
 ## How to Run (Local)
 ```
@@ -29,13 +29,13 @@ docker run -p 5000:5000 flask-art-search-app
 **Ops:** Similarly to considered tradeoffs, there may be storage and speed limitations due to the large amount of memory. For instance, the Tate Github that is used is no longer actively maintained. Therefore, the data is actually not changing so storage of the cleaned dataset is not a problem for the flask app, but if for reason the dataset changed id change or the more comprehensive data set was used, the app would be heavily limited and difficult to scale.
 
 ## Results & Evaluation
-Screenshot or sample outputs (place assets in /assets).
-Brief performance notes or resource footprint (if relevant). 
-Validation/ tests performed and outcomes.
+A screenshot of sample outputs is within the assets folder. The search is very fast and easy to navigate. Images appear, and if there are many results, then they simply appear a little slower.
+For validation/ tests, health check was succseful (found in 'tests' folder) and searching up the artist 'Monet' was also succesful (see screenshot in the 'assets' folder) alongside other searches by title, and year. 
 
 ## What’s Next
-Planned improvements, refactors, and stretch features.
+The next planned improvement would likely be adding more than one search field to make searches even more specific. Additionally, a strong addition would be a feature in the search bar that acts like predictive typing, so when a user begins typing, it provides them with possible options of what they might want to look up. This way, it is not compeltely memory reliant. More features would make this into a more complete website that could stretch wider. 
 
 ## Links
 ## Github Repo: [Link](https://github.com/kellykohout/corgis-tateCollection/tree/main)
+## Tate Github: [Link](https://github.com/tategallery/collection)
 ## Public cloud App (OPTIONAL)
