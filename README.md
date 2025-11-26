@@ -8,6 +8,8 @@
 **Course Concept(s):** Initially a single interactive Bash script that including piping and was committed to a GitHub repo (inspired by Case03). Transitioned in to the final product: Flask app, J-SON endpoints, data ingestion and cleaning, and containerization with Docker (inspired by Case04).
 
 **Architecture Diagram:** 
+![Architecture Diagram](assets/diagrams.png)
+
 
 **Data/Modules/Services:** Flask, JSON, Tate Museum artwork_data.csv (free-for-use)from the Tate Museum GitHub (link at bottom of page)
 
@@ -33,9 +35,9 @@ A screenshot of sample outputs is within the assets folder. The search is very f
 For validation/ tests, health check was succseful (found in 'tests' folder) and searching up the artist 'Monet' was also succesful (see screenshot in the 'assets' folder) alongside other searches by title, and year. 
 
 ## What’s Next
-The next planned improvement would likely be adding more than one search field to make searches even more specific. Additionally, a strong addition would be a feature in the search bar that acts like predictive typing, so when a user begins typing, it provides them with possible options of what they might want to look up. This way, it is not compeltely memory reliant. More features would make this into a more complete website that could stretch wider. 
+The next planned improvement would likely be adding more than one search field to make searches even more specific. Additionally, a strong addition would be a feature in the search bar that acts like predictive typing (auto-complete), so when a user begins typing, it provides them with possible options of what they might want to look up. That could include blob storage. This way, it is not compeltely human-memory reliant. More features would make this into a more complete website that could stretch wider. 
 
 ## Links
 ## Github Repo: [Link](https://github.com/kellykohout/corgis-tateCollection/tree/main)
 ## Tate Github: [Link](https://github.com/tategallery/collection)
-## Public cloud App: [Link](tate-artwork-search-dgc7eygvg0bfh2ex.eastus2-01.azurewebsites.net)
+## Public cloud App: Optional - n/a
